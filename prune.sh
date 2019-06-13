@@ -40,6 +40,11 @@ for filename in $basepath/*; do
     continue
   fi
 
+  # Do not self-destruct please
+  if [ "$filename" == "$0" ]; then
+    continue
+  fi
+
   # Calculate file age
   filelasteditdate=`date -r $filename +%s`
   currenttime=`date +%s`
