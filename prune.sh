@@ -1,4 +1,15 @@
 #!/bin/sh
+#####
+#
+# Deletes files in a folder based upone their age
+#
+# Usage:
+# $ ./prune.sh                  |--> Deletes all files older than 5 days in the current folder
+# $ ./prune.sh -p <path>        |--> Provides a custom path
+# $ ./prune.sh -a <seconds>     |--> Provides a custom age in seconds
+#
+#####
+
 echo "Start pruning..."
 
 agelimit=432000
