@@ -60,7 +60,7 @@ for filename in $basepath/*; do
     echo "$filename is older than $agelimit seconds, removing..."
 
     # Actually remove files only if safemode is disabled
-    if [ $safemode -e 1 ]; then
+    if [ $safemode -eq 0 ]; then
       rm $filename
     fi
     echo "$filename removed"
