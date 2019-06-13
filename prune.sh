@@ -64,6 +64,7 @@ for filename in $basepath/*; do
       rm $filename
     fi
     echo "$filename removed"
+
   # Otherwise do nothing
   else
     echo "$filename is younger than $agelimit seconds, keeping..."
