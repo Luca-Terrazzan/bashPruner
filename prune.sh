@@ -1,7 +1,7 @@
 #!/bin/sh
 #####
 #
-# Deletes files in a folder based upone their age
+# Deletes files in a folder based upon age since their last edit time
 #
 # Usage:
 # $ ./prune.sh                  |--> Deletes all files older than 5 days in the current folder
