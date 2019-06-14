@@ -51,8 +51,20 @@ for filename in $basepath/*; do
     continue
   fi
 
+  # Try to get the last status edit date with linux syntax
+  filelasteditdate=`stat -c "%Z" $filename`
+  if ! [ $? -eq 0 ]; then
+    # If that doesn't work, use OSX syntax
+    filelasteditdate=`stat -f "%c" $filename`
+  fi
+
+  # Cannot get file age, return with error
+  if ! [ $? -eq 0 ]; then
+    echo "Cannot get file information. Make sure that stat is an available program on this machine"
+    exit -1
+  fi
+
   # Calculate file age
-  filelasteditdate=`stat -f "%c" $filename`
   currenttime=`date +%s`
   fileage=$((currenttime-filelasteditdate))
 
