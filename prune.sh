@@ -13,8 +13,11 @@
 
 echo "Start pruning..."
 
+# Default age threshold is 5 days
 agelimit=432000
+# Default path to check is .
 basepath="."
+# Safemode is disabled by default
 safemode=0
 
 # Parse options, if any
