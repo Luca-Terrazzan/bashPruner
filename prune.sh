@@ -49,7 +49,7 @@ for filename in $basepath/*; do
   fi
 
   # Calculate file age
-  filelasteditdate=`date -r $filename +%s`
+  filelasteditdate=`stat -f "%c" $filename`
   currenttime=`date +%s`
   fileage=$((currenttime-filelasteditdate))
 
