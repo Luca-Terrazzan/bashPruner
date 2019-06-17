@@ -7,7 +7,7 @@
 # $ ./prune.sh                  |--> Deletes all files older than 5 days in the current folder
 # $ ./prune.sh -p <path>        |--> Provides a custom path
 # $ ./prune.sh -a <seconds>     |--> Provides a custom age in seconds
-# $ ./prune.sh -s               |--> Safe mode, doesn't actually delete files. Use this to test.
+# $ ./prune.sh -s               |--> Safe mode, actually delete files. Use this after testing.
 #
 #####
 
@@ -18,14 +18,14 @@ agelimit=432000
 # Default path to check is .
 basepath="."
 # Safemode is disabled by default
-safemode=0
+safemode=1
 
 # Parse options, if any
 while getopts "p:a:s" flag; do
   case "${flag}" in
     p) basepath="${OPTARG}" ;;
     a) agelimit="${OPTARG}" ;;
-    s) safemode=1 ;;
+    s) safemode=0 ;;
   esac
 done
 
