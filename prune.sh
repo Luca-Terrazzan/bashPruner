@@ -39,7 +39,7 @@ if ! [ -d "$basepath" ]; then
     exit
 fi
 
-for filename in $basepath/*; do
+for filename in "$basepath"/*; do
 
   # Invalid file or empty folder, continue
   [ -e "$filename" ] || continue
