@@ -52,9 +52,10 @@ for filename in $basepath/*; do
   fi
 
   # Try to get the last status edit date with linux syntax
-  filelasteditdate=`stat -c "%Z" $filename`
+  filelasteditdate=`stat -c "%Z" $filename 2>/dev/null`
   if ! [ $? -eq 0 ]; then
     # If that doesn't work, use OSX syntax
+    echo 'Using mac mode'
     filelasteditdate=`stat -f "%c" $filename`
   fi
 
