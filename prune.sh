@@ -14,12 +14,15 @@
 
 echo "Start pruning..."
 
-# Default age threshold is 5 days
+#####
+# Setup prune configuration, all settings are rewritable at runtime trhough their options
+# Maximum allowed file age in seconds
 agelimit=999999999
-# Default path to check is .
+# Path to the folder being pruned
 basepath="."
-# Safemode is disabled by default
+# Safemode, if set to 1 no actual removal is performed
 safemode=1
+#####
 
 # Parse options, if any
 while getopts "p:a:s" flag; do
