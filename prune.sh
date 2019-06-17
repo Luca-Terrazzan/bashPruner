@@ -2,6 +2,7 @@
 #####
 #
 # Deletes files in a folder based upon age since their last edit time
+# Please set a age limit and a base path before using.
 #
 # Usage:
 # $ ./prune.sh                  |--> Deletes all files older than 5 days in the current folder
@@ -14,7 +15,7 @@
 echo "Start pruning..."
 
 # Default age threshold is 5 days
-agelimit=432000
+agelimit=999999999
 # Default path to check is .
 basepath="."
 # Safemode is disabled by default
